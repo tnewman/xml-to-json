@@ -1,0 +1,12 @@
+{
+  "listAttributeName": "patients",
+  "listElementAttributeName": "patient",
+  "attributeMappings": [
+    {
+      "sourceName": "id",
+      "sourceType": "bad",
+      "destinationName": "patientid",
+      "destinationType": "bad"
+    }
+  ]
+}

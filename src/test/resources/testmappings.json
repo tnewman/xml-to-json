@@ -1,0 +1,36 @@
+{
+  "listAttributeName": "patients",
+  "listElementAttributeName": "patient",
+  "attributeMappings": [
+    {
+      "sourceName": "id",
+      "sourceType": "integer",
+      "destinationName": "patientid",
+      "destinationType": "integer"
+    },
+    {
+      "sourceName": "gender",
+      "sourceType": "genderCharacter",
+      "destinationName": "sex",
+      "destinationType": "sex"
+    },
+    {
+      "sourceName": "name",
+      "sourceType": "string",
+      "destinationName": "name",
+      "destinationType": "string"
+    },
+    {
+      "sourceName": "state",
+      "sourceType": "state",
+      "destinationName": "state",
+      "destinationType": "abbreviatedState"
+    },
+    {
+      "sourceName": "dateOfBirth",
+      "sourceType": "date",
+      "destinationName": "age",
+      "destinationType": "age"
+    }
+  ]
+}
