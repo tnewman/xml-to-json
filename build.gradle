@@ -9,6 +9,7 @@ repositories {
 
 dependencies {
     implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.9.7'
+    implementation 'in.hiaust:unitedstates:1.1'
 
     testImplementation 'junit:junit:4.12'
     testImplementation 'org.assertj:assertj-core:3.11.1'

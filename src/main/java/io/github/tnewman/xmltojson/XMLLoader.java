@@ -56,7 +56,7 @@ public class XMLLoader {
                             attributeValue = Integer.parseInt(itemString);
                             break;
                         case GENDER_CHARACTER:
-                            attributeValue = itemString.charAt(0);
+                            attributeValue = itemString.toLowerCase().charAt(0);
                             break;
                         case STATE:
                         case STRING:
