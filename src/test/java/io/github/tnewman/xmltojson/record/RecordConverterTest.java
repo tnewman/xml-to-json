@@ -124,4 +124,15 @@ public class RecordConverterTest {
 
         recordConverter.convertRecords(attributeMapping, records);
     }
+
+    @Test(expected = XMLToJSONException.class)
+    public void testConvertRecordsWithUnsupportedConversion() {
+        List<AttributeMapping> attributeMapping = Collections.singletonList(new AttributeMapping(
+                "test", AttributeType.INTEGER, "test", AttributeType.STRING));
+
+        List<Record> records = Collections.singletonList(
+                new Record(Collections.singletonList(new Attribute("test", 1))));
+
+        recordConverter.convertRecords(attributeMapping, records);
+    }
 }
