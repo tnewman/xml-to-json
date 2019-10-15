@@ -1,6 +1,5 @@
 package io.github.tnewman.xmltojson;
 
-import io.github.tnewman.xmltojson.JSONWriter;
 import io.github.tnewman.xmltojson.record.Attribute;
 import io.github.tnewman.xmltojson.record.Record;
 import org.junit.Before;

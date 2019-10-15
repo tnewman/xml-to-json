@@ -13,7 +13,7 @@ public class AttributeMapping {
     private AttributeType destinationType;
 
     public AttributeMapping() {
-
+        // This empty constructor is needed for Jackson
     }
 
     public AttributeMapping(String sourceName, AttributeType sourceType, String destinationName,
