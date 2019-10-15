@@ -12,6 +12,18 @@ public class AttributeMapping {
 
     private AttributeType destinationType;
 
+    public AttributeMapping() {
+
+    }
+
+    public AttributeMapping(String sourceName, AttributeType sourceType, String destinationName,
+                            AttributeType destinationType) {
+        this.sourceName = sourceName;
+        this.sourceType = sourceType;
+        this.destinationName = destinationName;
+        this.destinationType = destinationType;
+    }
+
     public String getSourceName() {
         return sourceName;
     }
