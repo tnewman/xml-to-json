@@ -31,7 +31,7 @@ public class XMLLoaderTest {
     }
 
     @Test
-    public void testLoadMappingsFromJSON() throws URISyntaxException, IOException, ParseException {
+    public void testLoadRecordsFromXML() throws URISyntaxException, IOException, ParseException {
         Path jsonMappings = Paths.get(
                 Objects.requireNonNull(getClass().getClassLoader().getResource("testmappings.json")).toURI());
 
@@ -39,7 +39,7 @@ public class XMLLoaderTest {
                 Objects.requireNonNull(getClass().getClassLoader().getResource("testdata.xml")).toURI());
 
         ListMapping listMapping = this.mappingLoader.loadMappingsFromJSON(jsonMappings);
-        List<Record> records = this.xmlLoader.loadAttributesFromXML(listMapping, xmlData);
+        List<Record> records = this.xmlLoader.loadRecordsFromXML(listMapping, xmlData);
 
         Record patient = records.get(0);
 
@@ -58,5 +58,17 @@ public class XMLLoaderTest {
         assertThat(patient.getAttributes().get(4).getName()).isEqualTo("dateOfBirth");
         assertThat(patient.getAttributes().get(4).getValue()).isEqualTo(
                 new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").parse("1962-01-04T00:03:00.000"));
+    }
+
+    @Test(expected = XMLToJSONException.class)
+    public void testLoadRecordsFromXMLWithBadRecords() throws URISyntaxException, IOException, ParseException {
+        Path jsonMappings = Paths.get(
+                Objects.requireNonNull(getClass().getClassLoader().getResource("testmappings.json")).toURI());
+
+        Path xmlData = Paths.get(
+                Objects.requireNonNull(getClass().getClassLoader().getResource("testbaddata.xml")).toURI());
+
+        ListMapping listMapping = this.mappingLoader.loadMappingsFromJSON(jsonMappings);
+        this.xmlLoader.loadRecordsFromXML(listMapping, xmlData);
     }
 }

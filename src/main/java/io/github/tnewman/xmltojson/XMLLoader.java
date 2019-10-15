@@ -33,13 +33,17 @@ public class XMLLoader {
         }
     }
 
-    public List<Record> loadAttributesFromXML(ListMapping listMapping, Path xmlFile) {
+    public List<Record> loadRecordsFromXML(ListMapping listMapping, Path xmlFile) {
         try {
             Document doc = documentBuilder.parse(xmlFile.toFile());
 
             NodeList recordsNodeList = doc.getElementsByTagName(listMapping.getListElementAttributeName());
 
             List<Record> records = new ArrayList<>();
+
+            if(recordsNodeList.getLength() == 0) {
+                throw new XMLToJSONException("XML does not contain any parsable records.");
+            }
 
             for(int i = 0; i < recordsNodeList.getLength(); i++) {
                 Element recordNode = (Element) recordsNodeList.item(0);
