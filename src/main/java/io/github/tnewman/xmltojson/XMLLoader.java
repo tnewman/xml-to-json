@@ -46,7 +46,7 @@ public class XMLLoader {
             }
 
             for(int i = 0; i < recordsNodeList.getLength(); i++) {
-                Element recordNode = (Element) recordsNodeList.item(0);
+                Element recordNode = (Element) recordsNodeList.item(i);
                 List<Attribute> attributes = new ArrayList<>();
 
                 for (AttributeMapping attributeMapping : listMapping.getAttributeMappings()) {
@@ -67,7 +67,7 @@ public class XMLLoader {
                             attributeValue = itemString;
                             break;
                         case DATE:
-                            attributeValue = new SimpleDateFormat("mm/dd/yyyy").parse(itemString);
+                            attributeValue = new SimpleDateFormat("MM/dd/yyyy").parse(itemString);
                             break;
                         default:
                             throw new XMLToJSONException("XML contains unparsable attribute: "

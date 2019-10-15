@@ -95,8 +95,8 @@ public class RecordConverter {
 
     private int convertDateOfBirthToAge(Date dateOfBirth) {
         return Period.between(
-                new Date().toInstant().atZone(ZoneId.systemDefault()).toLocalDate(),
-                dateOfBirth.toInstant().atZone(ZoneId.systemDefault()).toLocalDate()
+                dateOfBirth.toInstant().atZone(ZoneId.systemDefault()).toLocalDate(),
+                new Date().toInstant().atZone(ZoneId.systemDefault()).toLocalDate()
         ).getYears();
     }
 }

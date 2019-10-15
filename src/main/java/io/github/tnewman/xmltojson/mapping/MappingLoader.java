@@ -1,6 +1,7 @@
 package io.github.tnewman.xmltojson.mapping;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException;
 import io.github.tnewman.xmltojson.XMLToJSONException;
 
 import java.io.IOException;

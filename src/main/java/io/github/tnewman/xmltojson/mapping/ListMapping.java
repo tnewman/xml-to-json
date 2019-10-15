@@ -1,22 +1,12 @@
 package io.github.tnewman.xmltojson.mapping;
 
 import java.util.List;
-import java.util.Objects;
 
 public class ListMapping {
-    private String listAttributeName;
 
     private String listElementAttributeName;
 
     private List<AttributeMapping> attributeMappings;
-
-    public String getListAttributeName() {
-        return listAttributeName;
-    }
-
-    public void setListAttributeName(String listAttributeName) {
-        this.listAttributeName = listAttributeName;
-    }
 
     public String getListElementAttributeName() {
         return listElementAttributeName;

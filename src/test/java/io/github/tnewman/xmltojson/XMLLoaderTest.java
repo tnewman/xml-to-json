@@ -57,7 +57,7 @@ public class XMLLoaderTest {
 
         assertThat(patient.getAttributes().get(4).getName()).isEqualTo("dateOfBirth");
         assertThat(patient.getAttributes().get(4).getValue()).isEqualTo(
-                new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").parse("1962-01-04T00:03:00.000"));
+                new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS").parse("1962-03-04T00:00:00.000"));
     }
 
     @Test(expected = XMLToJSONException.class)

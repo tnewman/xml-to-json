@@ -1,5 +1,4 @@
 {
-  "listAttributeName": "patients",
   "listElementAttributeName": "patient",
   "attributeMappings": [
     {

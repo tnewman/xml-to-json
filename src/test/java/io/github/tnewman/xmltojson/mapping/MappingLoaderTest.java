@@ -28,7 +28,6 @@ public class MappingLoaderTest {
 
         ListMapping listMapping = this.mappingLoader.loadMappingsFromJSON(jsonMappings);
 
-        assertThat(listMapping.getListAttributeName()).isEqualTo("patients");
         assertThat(listMapping.getListElementAttributeName()).isEqualTo("patient");
 
         AttributeMapping idMapping = listMapping.getAttributeMappings().get(0);
